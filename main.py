@@ -9,6 +9,7 @@ import math
 import matplotlib.pyplot as plt
 import datetime
 
+# calculate the gini index
 def gini(initial_money, people, graph):
     cumul = 0
     ave = np.mean(graph)
@@ -20,6 +21,8 @@ def gini(initial_money, people, graph):
     gini_index = cumul/max
     return gini_index
 
+# the guassian fitline
+
 def fit1(initial_money, people, step):
     maximum = 2 * initial_money
     dev = (step*(people-1)/people)**0.5
@@ -30,6 +33,8 @@ def fit1(initial_money, people, step):
     fitline = np.hstack((people*x,y))
     return fitline
 
+# the exponential fitline
+
 def fit2(initial_money, people, step):
     x = np.arange(0.5,0.5+people)
     y = np.zeros(people)
@@ -39,6 +44,8 @@ def fit2(initial_money, people, step):
     y = np.reshape(y,(len(y),1))
     fitline = np.hstack((x,y))
     return fitline
+
+# the experiment of changing the income and spend, optional
 
 def reform(initial_money, people, graph):
     
